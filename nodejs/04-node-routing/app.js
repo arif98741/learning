@@ -21,23 +21,15 @@ module.exports = {
         response.writeHead(200,{'Content-Type' : 'text/html'});
 
         var path = url.parse(request.url).pathname;
+        console.log(path);
         switch (path) {
-            case '/':
-                renderHTML('./index.html',response);
+            case '/blog':
+                renderHTML('./blog.html',response);
                 break;
             case '/login':
                 renderHTML('./login.html',response);
                 break;
-            case '/blog':
-                renderHTML('./blog.html',response);
-                break;
-            case '/about':
-                renderHTML('./about.html',response);
-                break;
-
-            case '/tutorial':
-                renderHTML('./tutorial.html',response);
-                break;
+            
 
             default:
                 response.writeHead(404);
